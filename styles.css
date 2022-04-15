@@ -6,3 +6,20 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.calc{
+    display: flex;
+    flex-direction: column;
+}
+img{
+    width: 10px;
+    height: auto;
+}
+.firstRow{
+    display: flex;
+}
+.secRow{
+    display: flex;
+}
+.thirdRow{
+    display: flex;
+}
