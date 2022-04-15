@@ -46,3 +46,7 @@ img{
 .otherRow{
     display: flex;
 }
+.secondCol{
+    display: flex;
+    flex-direction: column;
+}
