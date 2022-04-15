@@ -1,11 +1,38 @@
 function init(){
     value = 0;
     readings = [];
+    operations = [];
 }
 
 function makeNumber(e){
     value = value*10 + parseInt(e.target.textContent);
     display.textContent = value;
+}
+
+function operate(e){
+    if(operations.length === 0){
+        readings[0] = value;
+        operations[0] = e.target.textContent;
+    }
+    else{
+        readings[1] = value;
+        const applyOpt = (readings, operations) => {
+            const numOne = readings[0];
+            const numTwo = readings[1];
+            if(operations[0] === '+'){
+                return numOne + numTwo;
+            }
+            else if(operations[0] === '-'){
+                return numOne - numTwo;
+            }
+            else if(operations[0] === '×'){
+                return numOne * numTwo;
+            }
+            else if(operations[0] === '÷'){
+                return numOne / numTwo;
+            }
+        }
+    }
 }
 
 const numBtns = Array.from(document.querySelectorAll('#num'));
@@ -20,8 +47,8 @@ for(let i=0; i<10; i++){
     numBtns[i].addEventListener('click', makeNumber);
 };
 
-// for(let i=0; i<4; i++){
-//     optBtns.addEventListener('click',)
-// }
+for(let i=0; i<4; i++){
+    optBtns[i].addEventListener('click', operate);
+}
 
 init();
