@@ -5,7 +5,7 @@ function init(){
 
 function makeNumber(e){
     value = value*10 + parseInt(e.target.textContent);
-    console.log(value);
+    display.textContent = value;
 }
 
 const numBtns = Array.from(document.querySelectorAll('#num'));
@@ -16,8 +16,12 @@ const delBtn = document.querySelector('#del');
 const display = document.querySelector('.display');
 const decimal = document.querySelector('#point');
 
-for(let i=0; i<10;i++){
+for(let i=0; i<10; i++){
     numBtns[i].addEventListener('click', makeNumber);
 };
+
+// for(let i=0; i<4; i++){
+//     optBtns.addEventListener('click',)
+// }
 
 init();
