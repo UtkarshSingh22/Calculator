@@ -41,7 +41,6 @@ function operate(e){
         readings = [];
         operations = [];
         readings[0] = applyOpt;
-        console.log(applyOpt);
     }
 }
 
