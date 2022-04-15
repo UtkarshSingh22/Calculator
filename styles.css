@@ -38,7 +38,6 @@ img{
 }
 .fourthAndfifthRow{
     display: flex;
-    border: 2px solid green;
 }
 .numRow{
     display: flex;
@@ -49,4 +48,7 @@ img{
 .secondCol{
     display: flex;
     flex-direction: column;
+}
+#plus{
+    height: 100%;
 }
