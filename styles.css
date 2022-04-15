@@ -23,3 +23,15 @@ img{
 .thirdRow{
     display: flex;
 }
+.fourthAndfifthRow{
+    display: flex;
+}
+.numRow{
+    display: flex;
+}
+.otherRow{
+    display: flex;
+}
+.display{
+    border: 2px solid black;
+}
