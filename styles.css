@@ -62,7 +62,7 @@ img{
     display: flex;
     flex-direction: column;
 }
-#plus{
+.plus{
     height: 100%;
 }
 .btn:hover{
