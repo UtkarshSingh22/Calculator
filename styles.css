@@ -68,3 +68,13 @@ img{
 .btn:hover{
     border-radius: 10px;
 }
+.footer{
+    font-size: 30px;
+    background-color: rgb(192, 248, 229);
+    box-shadow: 1px 1px 8px 10px rgb(192, 248, 229);
+    transition-duration: 0.5s;
+}
+.footer:hover{
+    font-size: 40px;
+    box-shadow: 1px 1px 20px 10px rgb(192, 248, 229);
+}
