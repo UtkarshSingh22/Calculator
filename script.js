@@ -49,8 +49,6 @@ function operate(e){
         display.textContent += e.target.textContent;
     }
     value = 0;
-    console.log(readings);
-    console.log(operations);
 }
 
 function equate(){
@@ -60,8 +58,6 @@ function equate(){
     operations = [];
     readings[0] = getResult;
     display.textContent = getResult;
-    console.log(readings);
-    console.log(operations);
 }
 
 const numBtns = Array.from(document.querySelectorAll('#num'));
