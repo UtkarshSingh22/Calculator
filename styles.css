@@ -83,15 +83,14 @@ img{
     font-size: 40px;
     box-shadow: 1px 1px 20px 10px rgb(192, 248, 229);
 }
-#opt{
+#opt
+,#equal{
     background-color: rgb(165, 243, 217);
 }
-.rem{
+.rem
+,#point{
     background-color: rgb(174, 245, 241);
 }
-#equal{
-    background-color: rgb(165, 243, 217);
-}
-#point{
-    background-color: rgb(174, 245, 241);
+a{
+    text-decoration: none;
 }
