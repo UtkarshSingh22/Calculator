@@ -78,5 +78,6 @@ for(let i=0; i<4; i++){
 }
 
 equalToBtn.addEventListener('click', equate);
+negate.addEventListener('click', changeSign);
 
 init();
