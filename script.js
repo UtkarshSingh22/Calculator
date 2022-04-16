@@ -53,6 +53,7 @@ const negate = document.querySelector('#negate');
 const delBtn = document.querySelector('#del');
 const display = document.querySelector('.display');
 const decimal = document.querySelector('#point');
+const equalToBtn = document.querySelector('#equal');
 
 for(let i=0; i<10; i++){
     numBtns[i].addEventListener('click', makeNumber);
@@ -61,5 +62,7 @@ for(let i=0; i<10; i++){
 for(let i=0; i<4; i++){
     optBtns[i].addEventListener('click', operate);
 }
+
+
 
 init();
