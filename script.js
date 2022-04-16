@@ -32,7 +32,6 @@ function operate(e){
     if(operations.length === 0){
         readings[0] = value;
         operations[0] = e.target.textContent;
-        value = 0;
     }
     else{
         readings[1] = value;
@@ -42,10 +41,9 @@ function operate(e){
         readings[0] = applyOpt;
         operations[0] = e.target.textContent;
         display.textContent = applyOpt;
-
+        display.textContent += e.target.textContent;
     }
-    console.log(readings);
-    console.log(operations);
+    value = 0;
 }
 
 const numBtns = Array.from(document.querySelectorAll('#num'));
