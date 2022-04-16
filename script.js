@@ -6,7 +6,8 @@ function init(){
 
 function makeNumber(e){
     value = value*10 + parseInt(e.target.textContent);
-    display.textContent += value;
+    display.textContent = value;
+    console.log(value);
 }
 
 function giveAns(readings, operations){
@@ -31,6 +32,7 @@ function operate(e){
     if(operations.length === 0){
         readings[0] = value;
         operations[0] = e.target.textContent;
+        value = 0;
     }
     else{
         readings[1] = value;
@@ -38,7 +40,12 @@ function operate(e){
         readings = [];
         operations = [];
         readings[0] = applyOpt;
+        operations[0] = e.target.textContent;
+        display.textContent = applyOpt;
+
     }
+    console.log(readings);
+    console.log(operations);
 }
 
 const numBtns = Array.from(document.querySelectorAll('#num'));
