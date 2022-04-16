@@ -56,12 +56,19 @@ function operate(e){
 }
 
 function equate(){
-    readings[1] = value;
-    const getResult = giveAns(readings, operations);
-    readings = [];
-    operations = [];
-    readings[0] = getResult;
-    display.textContent = getResult;
+    if(operations.length === 0){
+        readings[0] = value;
+        display.textContent = value;
+    }
+    else{
+        readings[1] = value;
+        const getResult = giveAns(readings, operations);
+        readings = [];
+        operations = [];
+        readings[0] = getResult;
+        display.textContent = getResult;
+    }
+    
     console.log(readings);
     console.log(operations);
 }
@@ -76,6 +83,10 @@ function changeSign(){
 function deleteDigit(){
     value = Math.trunc(value / 10);
     display.textContent = value;
+}
+
+function addDecimal(){
+    
 }
 
 const numBtns = Array.from(document.querySelectorAll('#num'));
