@@ -30,8 +30,13 @@ function giveAns(readings, operations){
 function operate(e){
     display.textContent += e.target.textContent;
     if(operations.length === 0){
-        readings[0] = value;
-        operations[0] = e.target.textContent;
+        if(readings.length === 0){
+            readings[0] = value;
+            operations[0] = e.target.textContent;
+        }
+        else{
+            operations[0] = e.target.textContent;
+        }
     }
     else{
         readings[1] = value;
@@ -44,6 +49,19 @@ function operate(e){
         display.textContent += e.target.textContent;
     }
     value = 0;
+    console.log(readings);
+    console.log(operations);
+}
+
+function equate(){
+    readings[1] = value;
+    const getResult = giveAns(readings, operations);
+    readings = [];
+    operations = [];
+    readings[0] = getResult;
+    display.textContent = getResult;
+    console.log(readings);
+    console.log(operations);
 }
 
 const numBtns = Array.from(document.querySelectorAll('#num'));
@@ -63,6 +81,6 @@ for(let i=0; i<4; i++){
     optBtns[i].addEventListener('click', operate);
 }
 
-
+equalToBtn.addEventListener('click', equate);
 
 init();
