@@ -84,6 +84,11 @@ function operate(e){
         }
         readings[1] = value;
         const applyOpt = giveAns(readings, operations);
+        if(digits_count(applyOpt) > 15){
+            let str = 'Out of Range';
+            display.textContent = str;
+            return ;
+        }
         readings = [];
         operations = [];
         readings[0] = applyOpt;
@@ -104,6 +109,11 @@ function equate(){
     else{
         readings[1] = value;
         const getResult = giveAns(readings, operations);
+        if(digits_count(getResult) > 15){
+            let str = 'Out of Range';
+            display.textContent = str;
+            return ;
+        }
         readings = [];
         operations = [];
         readings[0] = getResult;
