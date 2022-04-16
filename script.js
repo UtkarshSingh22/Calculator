@@ -86,5 +86,6 @@ for(let i=0; i<4; i++){
 equalToBtn.addEventListener('click', equate);
 negate.addEventListener('click', changeSign);
 allClear.addEventListener('click', init);
+delBtn.addEventListener('click', deleteDigit);
 
 init();
