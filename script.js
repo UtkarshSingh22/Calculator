@@ -60,6 +60,11 @@ function equate(){
     display.textContent = getResult;
 }
 
+function changeSign(){
+    value = value * -1;
+    display.textContent = value;
+}
+
 const numBtns = Array.from(document.querySelectorAll('#num'));
 const optBtns = Array.from(document.querySelectorAll('#opt'));
 const allClear = document.querySelector('#AC');
