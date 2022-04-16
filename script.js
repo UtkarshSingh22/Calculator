@@ -3,10 +3,18 @@ function init(){
     readings = [];
     operations = [];
     display.textContent = '';
+    deciPressed = false;
 }
 
 function makeNumber(e){
-    value = value*10 + parseInt(e.target.textContent);
+    if(deciPressed === false){
+        value = value*10 + parseInt(e.target.textContent);
+    }
+    else{
+        count++;
+        value = (value*(10**count)) + parseInt(e.target.textContent);
+        value /= (10 ** count);
+    }
     display.textContent = value;
     console.log(value);
 }
@@ -31,6 +39,9 @@ function giveAns(readings, operations){
 function operate(e){
     display.textContent += e.target.textContent;
     if(operations.length === 0){
+        if(deciPressed === true){
+            deciPressed = false;
+        }
         if(readings.length === 0){
             readings[0] = value;
             operations[0] = e.target.textContent;
@@ -41,6 +52,9 @@ function operate(e){
         value = 0;
     }
     else{
+        if(deciPressed === true){
+            deciPressed = false;
+        }
         readings[1] = value;
         const applyOpt = giveAns(readings, operations);
         readings = [];
@@ -86,7 +100,8 @@ function deleteDigit(){
 }
 
 function addDecimal(){
-    
+    deciPressed = true;
+    count = 0;
 }
 
 const numBtns = Array.from(document.querySelectorAll('#num'));
