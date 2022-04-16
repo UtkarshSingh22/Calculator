@@ -39,7 +39,6 @@ function makeNumber(e){
         return ;
     }
     display.textContent = value;
-    console.log(value);
 }
 
 function giveAns(readings, operations){
@@ -97,8 +96,6 @@ function operate(e){
         display.textContent += e.target.textContent;
         value = 0;
     }
-    console.log(readings);
-    console.log(operations);
 }
 
 function equate(){
@@ -119,9 +116,6 @@ function equate(){
         readings[0] = getResult;
         display.textContent = getResult;
     }
-    
-    console.log(readings);
-    console.log(operations);
 }
 
 function changeSign(){
