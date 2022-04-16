@@ -25,7 +25,6 @@ const decimalCount = num => {
  }
 
 function makeNumber(e){
-    console.log(e);
     if(deciPressed === false){
         value = value*10 + parseInt(e.target.textContent);
     }
@@ -158,20 +157,5 @@ negate.addEventListener('click', changeSign);
 allClear.addEventListener('click', init);
 delBtn.addEventListener('click', deleteDigit);
 decimal.addEventListener('click', addDecimal);
-
-//Keyboard support
-for(let i=0; i<10; i++){
-    numBtns[i].addEventListener('keydown', makeNumber);
-};
-
-for(let i=0; i<4; i++){
-    optBtns[i].addEventListener('keydown', operate);
-}
-
-equalToBtn.addEventListener('keydown', equate);
-negate.addEventListener('keydown', changeSign);
-allClear.addEventListener('keydown', init);
-delBtn.addEventListener('keydown', deleteDigit);
-decimal.addEventListener('keydown', addDecimal);
 
 init();
