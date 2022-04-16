@@ -99,5 +99,6 @@ equalToBtn.addEventListener('click', equate);
 negate.addEventListener('click', changeSign);
 allClear.addEventListener('click', init);
 delBtn.addEventListener('click', deleteDigit);
+decimal.addEventListener('click', addDecimal);
 
 init();
