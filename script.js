@@ -38,6 +38,7 @@ function operate(e){
         else{
             operations[0] = e.target.textContent;
         }
+        value = 0;
     }
     else{
         readings[1] = value;
@@ -48,8 +49,10 @@ function operate(e){
         operations[0] = e.target.textContent;
         display.textContent = applyOpt;
         display.textContent += e.target.textContent;
+        value = 0;
     }
-    value = 0;
+    console.log(readings);
+    console.log(operations);
 }
 
 function equate(){
@@ -59,10 +62,19 @@ function equate(){
     operations = [];
     readings[0] = getResult;
     display.textContent = getResult;
+    console.log(readings);
+    console.log(operations);
 }
 
 function changeSign(){
     value = value * -1;
+    display.textContent = value;
+    console.log(readings);
+    console.log(operations);
+}
+
+function deleteDigit(){
+    value = Math.trunc(value / 10);
     display.textContent = value;
 }
 
