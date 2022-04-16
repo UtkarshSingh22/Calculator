@@ -54,6 +54,10 @@ function giveAns(readings, operations){
         ans = numOne * numTwo;
     }
     else if(operations[0] === '÷'){
+        if(numTwo === 0){
+            ans = 'infinity';
+            return ;
+        }
         ans = numOne / numTwo;
     }
     if(decimalCount(ans) > 5){
@@ -88,6 +92,11 @@ function operate(e){
             display.textContent = str;
             return ;
         }
+        if(ans == 'infinity'){
+            const str = "It's infinity!";
+            display.textContent = str;
+            return ;
+        }
         readings = [];
         operations = [];
         readings[0] = applyOpt;
@@ -108,6 +117,11 @@ function equate(){
         const getResult = giveAns(readings, operations);
         if(digits_count(getResult) > 15){
             let str = 'Out of Range';
+            display.textContent = str;
+            return ;
+        }
+        if(ans == 'infinity'){
+            const str = "It's infinity!";
             display.textContent = str;
             return ;
         }
