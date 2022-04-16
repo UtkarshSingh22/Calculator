@@ -16,6 +16,14 @@ function digits_count(n) {
     return count;
 }
 
+const decimalCount = num => {
+    const numStr = String(num);
+    if (numStr.includes('.')) {
+       return numStr.split('.')[1].length;
+    };
+    return 0;
+ }
+
 function makeNumber(e){
     if(deciPressed === false){
         value = value*10 + parseInt(e.target.textContent);
@@ -38,17 +46,21 @@ function giveAns(readings, operations){
     const numOne = readings[0];
     const numTwo = readings[1];
     if(operations[0] === '+'){
-        return numOne + numTwo;
+        ans = numOne + numTwo;
     }
     else if(operations[0] === '-'){
-        return numOne - numTwo;
+        ans = numOne - numTwo;
     }
     else if(operations[0] === '×'){
-        return numOne * numTwo;
+        ans = numOne * numTwo;
     }
     else if(operations[0] === '÷'){
-        return numOne / numTwo;
+        ans = numOne / numTwo;
     }
+    if(decimalCount(ans) > 5){
+        ans = parseFloat(ans.toFixed(5));
+    }
+    return ans;
 }
 
 function operate(e){
