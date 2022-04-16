@@ -5,9 +5,6 @@ function init(){
 }
 
 function makeNumber(e){
-    if(operations.length !== 0){
-        value = 0;
-    }
     value = value*10 + parseInt(e.target.textContent);
     display.textContent += value;
 }

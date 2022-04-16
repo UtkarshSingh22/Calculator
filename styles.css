@@ -27,6 +27,7 @@ body{
     align-items: center;
     justify-content: flex-end;
     font-size: 40px;
+    font-family: 'Akshar', sans-serif;
 }
 .btn{
     width: 70px;
