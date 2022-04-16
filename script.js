@@ -6,6 +6,16 @@ function init(){
     deciPressed = false;
 }
 
+function digits_count(n) {
+    var count = 0;
+    if (n >= 1) ++count;
+    while (n / 10 >= 1) {
+        n /= 10;
+        ++count;
+    }
+    return count;
+}
+
 function makeNumber(e){
     if(deciPressed === false){
         value = value*10 + parseInt(e.target.textContent);
@@ -14,6 +24,11 @@ function makeNumber(e){
         count++;
         value = (value*(10**count)) + parseInt(e.target.textContent);
         value /= (10 ** count);
+    }
+    if(digits_count(value) > 15){
+        let str = 'Out of Range';
+        display.textContent = str;
+        return ;
     }
     display.textContent = value;
     console.log(value);
